@@ -10,10 +10,14 @@ public class Main {
         Scanner cadenas=new Scanner(System.in);
 
         System.out.println("Por favor ingrese la marca del Detergente que desea consultar: ");
-        String marca=cadenas.next();
+        String marca=datos.next();
         System.out.println("Por favor ingrese el precio del Detergente que desea consultar: ");
         double precio=cadenas.nextDouble();
 
         Detergente Deter=new Detergente(marca,precio);
+        Deter.getVolumen();
+        Deter.getTipoEnvase();
+        Deter.pedirDescuento();
+        Deter.tooString();
     }
 }
