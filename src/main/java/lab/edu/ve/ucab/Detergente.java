@@ -69,6 +69,32 @@ public class Detergente implements EsLiquido,ConDescuento {
         return precio=precioDescuento;  //Anexo el PrecioDescuento a precio
     }
 
+    public void pedirOpcionesDescuento(){
+        String opcion;
+        do{
+            System.out.println("¿El producto posee un descuento? Seleccione las alternativas propuestas: ");
+            System.out.println(" ");
+            System.out.println("1. SI");
+            System.out.println(" ");
+            System.out.println("2. NO");
+            opcion=cadenas.next();
+            if (!"1".equals(opcion) && !"2".equals(opcion)){
+                System.out.println(" ");
+                System.out.println("ERROR");
+                System.out.println("La opcion seleccionada fue: "+opcion);
+                System.out.println("Y dicha opción no está dentro de las propuestas anteriormente");
+                System.out.println("Intentelo de nuevo.");
+            }
+        }while (!"1".equals(opcion) && !"2".equals(opcion));
+        if ("1".equals(opcion)){
+            getPrecioDescuento();
+        }
+        else if ("2".equals(opcion)){
+            System.out.println("Su precio se mantiene igual");
+            System.out.println(" ");
+        }
+    }
+
     public void tooString() {
         System.out.println("***********CARACTERISTICAS DEL PRODUCTO***********************");
         System.out.println(" ");
@@ -97,6 +123,5 @@ public class Detergente implements EsLiquido,ConDescuento {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-
 
 }
