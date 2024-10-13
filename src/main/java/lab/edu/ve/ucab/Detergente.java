@@ -108,20 +108,4 @@ public class Detergente implements EsLiquido,ConDescuento {
         System.out.println("**************************************************************");
     }
 
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
 }

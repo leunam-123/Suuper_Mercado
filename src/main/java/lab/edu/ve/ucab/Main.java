@@ -8,6 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner datos=new Scanner(System.in);
         Scanner cadenas=new Scanner(System.in);
+        String marca;
+        double precio;
         char opcion;
 
         //
@@ -39,9 +41,9 @@ public class Main {
                         System.out.println("Por favor digite los siguientes datos del producto: ");
                         System.out.println(" ");
                         System.out.println("Ingrese la marca del Producto: ");
-                        String marca=datos.next();
+                        marca=cadenas.next();
                         System.out.println("Por favor ingrese el precio del Detergente que desea consultar (decimales con ,): ");
-                        double precio=cadenas.nextDouble();
+                        precio=datos.nextDouble();
                         Detergente Deter=new Detergente(marca,precio);
                         Deter.getVolumen();
                         Deter.getTipoEnvase();
@@ -50,6 +52,38 @@ public class Main {
                         break;
 
                     case '2':
+
+                        System.out.println("Por favor digite los siguientes datos del producto: ");
+                        System.out.println(" ");
+                        System.out.println("Ingrese la marca del Producto: ");
+                        marca = cadenas.next();
+                        System.out.println("Por favor ingrese el precio del Producto (Decimales con ,): ");
+                        precio=datos.nextDouble();
+                        System.out.println("Por favor ingrese alguno de los tipos de cereales presentados: ");
+                        System.out.println(" ");
+                        System.out.println("* Cereal Espelta");
+                        System.out.println(" ");
+                        System.out.println("* Cereal de Maiz");
+                        System.out.println(" ");
+                        System.out.println("* Cereal de Trigo");
+                        System.out.println(" ");
+                        System.out.println("* Otro (Especificar)");
+                        String cereal=cadenas.next().toLowerCase();
+                        if (cereal.equals("espelta")){
+                            Cereal cere=new Cereal(marca,precio,cereal);
+                            cere.tooString();
+                        } else if (cereal.equals("maiz")) {
+                            Cereal cere=new Cereal(marca,precio,cereal);
+                            cere.tooString();
+                        }
+                        else if (cereal.equals("trigo")) {
+                            Cereal cere=new Cereal(marca,precio,cereal);
+                            cere.tooString();
+                        }
+                        else {
+                            Cereal cere=new Cereal(marca,precio,cereal);
+                            cere.tooString();
+                        }
 
                         break;
 
