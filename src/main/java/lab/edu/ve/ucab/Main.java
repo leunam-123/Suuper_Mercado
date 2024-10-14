@@ -2,6 +2,10 @@ package lab.edu.ve.ucab;
 
 import java.util.Scanner;
 
+/**
+ *
+ * @Manuel.AR
+ */
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -15,9 +19,9 @@ public class Main {
         //
 
         do {
-            System.out.println("**********MENÚ PARA EL SUPERMARKET**********");
+            System.out.println("\033[33m**********MENÚ PARA EL SUPERMARKET**********");
             System.out.println(" ");
-            System.out.println("Por favor seleccione alguna de las opciones propuestas para describir algún producto: ");
+            System.out.println("\033[35mPor favor seleccione alguna de las opciones propuestas para describir algún producto: ");
             System.out.println("1. Detergente");
             System.out.println(" ");
             System.out.println("2. Comida");
@@ -29,7 +33,7 @@ public class Main {
             opcion=cadenas.next().charAt(0);
             if (opcion!='1' && opcion!='2' && opcion!='3' && opcion!='4') {
                 System.out.println(" ");
-                System.out.println("ERROR");
+                System.out.println("\033[31mERROR");
                 System.out.println("La opcion seleccionada fue: "+opcion);
                 System.out.println("Y dicha opción no está dentro de las propuestas anteriormente");
                 System.out.println("Intentelo de nuevo.");
@@ -38,7 +42,7 @@ public class Main {
             if(opcion=='1'||opcion=='2'||opcion=='3'||opcion=='4'){
                 switch(opcion){
                     case '1':
-                        System.out.println("Por favor digite los siguientes datos del producto: ");
+                        System.out.println("\033[35mPor favor digite los siguientes datos del producto: ");
                         System.out.println(" ");
                         System.out.println("Ingrese la marca del Producto: ");
                         marca=cadenas.next();
@@ -107,7 +111,7 @@ public class Main {
                         break;
 
                     case '4':
-                        System.out.println("Gracias por usar el programa! tenga buen dia!");
+                        System.out.println("\033[36mGracias por usar el programa! tenga buen dia!");
                         break;
 
                 }
