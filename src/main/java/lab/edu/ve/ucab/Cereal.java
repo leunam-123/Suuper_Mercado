@@ -12,7 +12,6 @@ public class Cereal  implements EsAlimento {
     private int calorias;
 
     Scanner datos=new Scanner(System.in);
-    Scanner cadenas=new Scanner(System.in);
     boolean verdadero=false;
 
     public Cereal(String marca, double precio, String tipoDeCereal) {
@@ -91,6 +90,7 @@ public class Cereal  implements EsAlimento {
         }
         System.out.println(" ");
         System.out.println("Las Calorias que ofrece el producto es de: "+calorias+" Kcal");
+        System.out.println(" ");
         System.out.println("El precio de su producto es de: $"+precio);
         System.out.println(" ");
         System.out.println("**************************************************************");

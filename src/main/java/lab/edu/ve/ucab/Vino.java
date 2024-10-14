@@ -2,22 +2,28 @@ package lab.edu.ve.ucab;
 
 import java.util.Scanner;
 
-public class Detergente implements EsLiquido,ConDescuento {
-    private String marca;
-    private double precio;
-    private double volumen;
-    private String tipoEnvase;
-    private double precioDescuento;
+public class Vino implements EsLiquido,ConDescuento{
+    private String marca; //Listo
+    private double precio; //Listo
+    private double volumen; //Listo
+    private String tipoEnvase; //Listo
+    private double precioDescuento; //Listo
+    private String tipoDeVino; //Listo
+    private double gradoAlcohol; //Listo
+    private double calorias;
 
     Scanner datos = new Scanner(System.in);
     Scanner cadenas = new Scanner(System.in);
 
-    public Detergente(String marca, double precio) { //Constructor que inicializa los valores de los atributos
-        volumen = 0.0;                               //Por parámetros
-        tipoEnvase = "";
-        this.marca = marca;
-        this.precio = precio;
-        precioDescuento= 0.0;
+    public Vino (String marca,String tipoDeVino,double gradoAlcohol,double precio){
+        this.marca=marca;
+        this.tipoDeVino=tipoDeVino;
+        this.precio=precio;
+        this.gradoAlcohol=gradoAlcohol;
+        volumen=0.0;
+        calorias=0.0;
+        tipoEnvase=" ";
+        precioDescuento=0.0;
     }
 
     @Override
@@ -27,6 +33,7 @@ public class Detergente implements EsLiquido,ConDescuento {
         return volumen;
     }
 
+
     @Override
     public void setVolumen(double volumen) { //imprimo el valor del Volumen ingresado
         System.out.println("El volumen de su producto es : "+volumen+" metros cubicos");
@@ -35,7 +42,7 @@ public class Detergente implements EsLiquido,ConDescuento {
 
     @Override
     public String getTipoEnvase() { //Le pido al usuario el tipo de envase del producto y lo retorno
-        System.out.println("Por favor ingrese el tipo de envase (Grande, pequenio, mediano, etc.): ");
+        System.out.println("Por favor ingrese el tipo de envase (Botella, Lata, Magnum, etc.): ");
         tipoEnvase=cadenas.next();
         return tipoEnvase;
     }
@@ -44,7 +51,6 @@ public class Detergente implements EsLiquido,ConDescuento {
     public void setTipoEnvase(String tipoEnvase) { //Imprimo el tipo de Envase del producto
         System.out.println("Su producto posee un envase del tipo: " + tipoEnvase);
     }
-
 
     @Override
     public double getDescuento() { //Le pido al usuario el porcentaje de descuento de su producto
@@ -95,16 +101,27 @@ public class Detergente implements EsLiquido,ConDescuento {
         }
     }
 
+    public void calcularCalorias(){
+        calorias=gradoAlcohol*10;
+        System.out.println("La cantidad de calorias que posee el vino es de: "+calorias);
+    }
+
     public void tooString() {
         System.out.println("***********CARACTERISTICAS DEL PRODUCTO***********************");
         System.out.println(" ");
-        System.out.println("La Marca de Detergente consultada es : "+marca);
+        System.out.println("La Marca del vino es : "+marca);
         System.out.println(" ");
         setVolumen(volumen);
         System.out.println(" ");
-        System.out.println("El precio de su producto es de: $"+precio);
-        System.out.println(" ");
         setTipoEnvase(tipoEnvase);
+        System.out.println(" ");
+        System.out.println("El tipo de vino es: "+tipoDeVino);
+        System.out.println(" ");
+        System.out.println("El grado de alcohol del vino es: "+gradoAlcohol);
+        System.out.println(" ");
+        calcularCalorias();
+        System.out.println(" ");
+        System.out.println("El precio de su producto es de: $"+precio);
         System.out.println("**************************************************************");
     }
 

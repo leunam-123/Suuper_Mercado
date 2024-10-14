@@ -88,7 +88,22 @@ public class Main {
                         break;
 
                     case '3':
-
+                        System.out.println("Por favor digite los siguientes datos del producto: ");
+                        System.out.println(" ");
+                        System.out.println("Ingrese la marca del Producto: ");
+                        marca = cadenas.next();
+                        System.out.println("Por favor ingrese el precio del Producto (Decimales con ,): ");
+                        precio=datos.nextDouble();
+                        System.out.println("Por favor ingrese el tipo de Vino: ");
+                        String tipoDeVino=cadenas.next();
+                        System.out.println(" ");
+                        System.out.println("Ingrese el grado del Alcohol del producto: ");
+                        double grado=datos.nextDouble();
+                        Vino vin= new Vino(marca,tipoDeVino,grado,precio);
+                        vin.getVolumen();
+                        vin.getTipoEnvase();
+                        vin.pedirOpcionesDescuento();
+                        vin.tooString();
                         break;
 
                     case '4':
