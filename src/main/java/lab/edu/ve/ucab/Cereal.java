@@ -13,6 +13,7 @@ public class Cereal  implements EsAlimento {
 
     Scanner datos=new Scanner(System.in);
     boolean verdadero=false;
+    String basura="";
 
     public Cereal(String marca, double precio, String tipoDeCereal) {
         this.marca = marca;
